@@ -7,6 +7,7 @@
   }
 }
 
+@media screen and (max-width: 768px) {
 .home {
   width: 100%;
   overflow: hidden;
@@ -150,7 +151,6 @@ text-align: left;
   opacity: 1;
 } */
 
-@media screen and (max-width: 768px) {
   .home h1 {
     font-family: var(--roboto);
     font-size: 20px;
