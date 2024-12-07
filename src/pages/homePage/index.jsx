@@ -7,6 +7,7 @@ import Image2 from "../../assets/flat.png";
 import Image3 from "../../assets/self-con.png";
 
 import Featured from "./featured"
+import Header from "./header"
 
 // import featuredImage1 from "../../assets/featured_1.png";
 // import featuredImage2 from "../../assets/featured_2.png";
@@ -61,6 +62,10 @@ const Home = () => {
 
  
   return (
+    <>
+          <section>
+      <Header />
+    </section>
     <div className="home">
       <h1>
         Where Comfort Meets <br />
@@ -102,6 +107,8 @@ const Home = () => {
       <Featured />
     
     </div>
+
+    </>
   );
 };
 

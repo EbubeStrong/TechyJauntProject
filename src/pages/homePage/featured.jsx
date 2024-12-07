@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./index.css";
 import { useNavigate } from "react-router-dom";
 import featuredImage1 from "../../assets/featured_1.png";
 import featuredImage2 from "../../assets/featured_2.png";
@@ -7,6 +6,8 @@ import featuredImage3 from "../../assets/featured_3.png";
 import featuredImage4 from "../../assets/featured_4.png";
 import featuredImage5 from "../../assets/featured_5.png";
 import featuredImage6 from "../../assets/featured_6.png";
+
+import Header from "./header";
 
 const Featured = () => {
   const navigate = useNavigate();
@@ -79,75 +80,74 @@ const Featured = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % featuredProperties.length);
   };
 
-  // Go to the previous property
   const prevProperty = () => {
     setCurrentIndex(
       (prevIndex) =>
-        (prevIndex - 1 + featuredProperties.length) % featuredProperties.length // Loop back to the last property
+        (prevIndex - 1 + featuredProperties.length) % featuredProperties.length
     );
   };
 
-  // const handleTitleClick = (id) => {
-  //   navigate(`/about?id=${id}`);
-  // }
-
-  //   const handleTitleClick = (featuredProperties) => {
-  //   navigate(`/about/${featuredProperties.id}`);
+  // const handleTitleClick = (property) => {
+  //   console.log(property); // Debug to ensure `property` is correct
+  //   if (property && property.id) {
+  //     navigate(`/about/${property.id}`);
+  //   } else {
+  //     console.error("Property or property.id is undefined");
+  //   }
   // };
 
   const handleTitleClick = (property) => {
-    console.log(property); // Debug to ensure `property` is correct
-    if (property && property.id) {
+    if (property?.id) {
       navigate(`/about/${property.id}`);
-    } else {
-      console.error("Property or property.id is undefined");
     }
   };
-
   return (
-    <>
-      <section className="featured">
-        <div className="listing">
-          <h2>Recommended listings</h2>
-          <button>See all</button>
-        </div>
+    <section className="featured">
+      <div className="listing">
+        <h2>Recommended Listings</h2>
+        <button>See all</button>
+      </div>
+      <div className="properties">
+        {featuredProperties.map((property, id) => {
+          // Calculate transform to position the current and next wrappers
+          const translateX = `${-100 * currentIndex}%`;
 
-        <div className="properties">
-          <div className="wrapper">
-            {/* Display only the property based on the current index */}
-            <img
-              src={featuredProperties[currentIndex].image}
-              alt={featuredProperties[currentIndex].title}
-            />
-
-            {/* <h3 onClick={() => handleTitleClick(property)}>{featuredProperties[currentIndex].title}</h3> */}
-            <h3
+          return (
+            <div
+              className="wrapper"
+              key={id}
+              style={{ transform: `translateX(${translateX})` }}
             >
-              {featuredProperties[currentIndex].title}
-            </h3>
+              <img src={property.image} alt={property.title} />
+              <div className="house-images">
+                <h3 className="title">{property.title}</h3>
+                <p className="title location">{property.location}</p>
 
-            <p>
-              <span></span> {featuredProperties[currentIndex].location}
-            </p>
-            <p>{featuredProperties[currentIndex].price}</p>
-            <p>{featuredProperties[currentIndex].beds}</p>
-            <p>{featuredProperties[currentIndex].description}</p>
-            <p>{featuredProperties[currentIndex].date}</p>
-            <button 
-              className="view"
-              onClick={() => handleTitleClick(featuredProperties[currentIndex])}>View details</button>
-          </div>
+                <p>{property.price}</p>
+                <p>{property.beds}</p>
 
-          {/* Left and Right Navigation Buttons */}
-          <div className="button-prev" onClick={prevProperty}>
-            <span>&#8592;</span> {/* Left arrow */}
-          </div>
-          <div className="button-next" onClick={nextProperty}>
-            <span>&#8594;</span> {/* Right arrow */}
-          </div>
-        </div>
-      </section>
-    </>
+                <div className="house-text">
+                  <p>{property.description}</p>
+                  <p>{property.date}</p>
+                </div>
+
+                <button onClick={() => handleTitleClick(property)}>
+                  View Details
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="controls">
+        <button className="button-prev" onClick={prevProperty}>
+          Previous
+        </button>
+        <button className="button-next" onClick={nextProperty}>
+          Next
+        </button>
+      </div>
+    </section>
   );
 };
 

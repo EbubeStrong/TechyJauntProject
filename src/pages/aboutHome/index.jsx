@@ -132,8 +132,8 @@ const AboutHome = () => {
               <img src={property?.landLordImage} alt="Landlord" />
             </div>
             <div className="landlord-details">
-              <h3>Landlord</h3>
               <p>{property?.landLordName}</p>
+              <h3>Landlord</h3>
               {/* <p>{property?.landLordPhone}</p> */}
               {/* <p>{property?.landLordEmail}</p> */}
             </div>
