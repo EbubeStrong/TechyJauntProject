@@ -12,6 +12,7 @@
     width: 100%;
     overflow: hidden;
     margin-top: 3rem;
+    margin-bottom: 4rem;
     /* padding: 0 0 3rem 0; */
   }
 
@@ -324,6 +325,7 @@
   }
 
   footer{
+    margin-top: 3rem;
     position: fixed;
     bottom: 0;
     width: 100%;
