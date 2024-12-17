@@ -53,6 +53,14 @@ module.exports = {
       emailVerificationToken: {
         type: Sequelize.STRING,
       },
+      passwordResetToken: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
+      passwordResetTokenExpires: {
+        type: Sequelize.DATE,
+        allowNull: true,
+      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false

@@ -50,6 +50,14 @@ const User = sequelize.define('User', {
   },
   emailVerificationToken: {
     type: DataTypes.STRING,
+  },
+  passwordResetToken: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  passwordResetTokenExpires: {
+    type: DataTypes.DATE,
+    allowNull: true,
   }
 }, {
   timestamps: true,

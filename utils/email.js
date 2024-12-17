@@ -4,8 +4,8 @@ const sendGmail = async (email, emailVerificationToken) => {
  
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    host: 'smtp.gmail.com',
-    port: 587,
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
     secure: false,
     auth: {
       user: process.env.EMAIL_USER,
