@@ -222,7 +222,7 @@ const createLandlordHandler = async (req, res) => {
 }
 
 // @desc GET Verify User Email
-// @route GET /verify-email:token
+// @route GET /v1/users/verify-email:token
 // @access Private
 const verifyEmail = async (req, res) => {
   const emailVerificationToken = req.query.emailVerificationToken;
@@ -259,8 +259,56 @@ const verifyEmail = async (req, res) => {
   }
 }
 
+// @desc POST Login User
+// @route POST /v1/users/login
+// @access Public
+const loginUserHandler = async (req, res) => {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    res.status(400).json({
+      message: 'Email and password are required',
+    })
+  }
+  
+  const user = await User.findOne({ where: { email } })
+  if (!user) {
+    return res.status(401).json({
+      message: 'Invalid email or password',
+    });
+  }
+
+  if (!user.isEmailVerified) {
+    return res.status(401).json({
+      message: 'Please verify your email before logging in'
+    })
+  }
+
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+  if (!isPasswordValid) {
+    return res.status(401).json({
+      message: 'Invalid password',
+    });
+  }
+
+  const payload = {
+    id: user.id,
+    email: user.email
+  };
+
+  const token = jwt.sign(payload, config.jwtSecret, { expiresIn: '3d' });
+  
+  res.status(200).json({
+    message: "Login Successful",
+    token,
+  });
+};
+
+
+
 module.exports = {
   createTenantHandler,
   createLandlordHandler,
   verifyEmail,
+  loginUserHandler,
 }

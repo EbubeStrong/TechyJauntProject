@@ -1,5 +1,5 @@
 const express = require('express');
-const { createTenantHandler, createLandlordHandler, verifyEmail } = require('../../controllers/v1/userController');
+const { createTenantHandler, createLandlordHandler, verifyEmail, loginUserHandler } = require('../../controllers/v1/userController');
 const router = express.Router();
 
 // Route for Tenant signup
@@ -16,6 +16,9 @@ router.post('/register/landlord', (req, res) => {
 
 // Route for Email verification
 router.get('/verify-email', verifyEmail);
+
+// Route for Loggin in to User account
+router.post('/login', loginUserHandler);
 
 
 module.exports = router;
