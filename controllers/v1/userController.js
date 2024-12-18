@@ -3,6 +3,7 @@ const config = require('../../config/config');
 const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 const sendGmail = require('../../utils/email');
+const sendpasswordResetEmail = require('../../utils/passwordReset');
 
 
 const validatePassword = (password) => {
@@ -222,9 +223,9 @@ const createLandlordHandler = async (req, res) => {
 }
 
 // @desc GET Verify User Email
-// @route GET /v1/users/verify-email:token
-// @access Private
-const verifyEmail = async (req, res) => {
+// @route GET /v1/users/verify-email
+// @access Public
+const verifyEmailHandler = async (req, res) => {
   const emailVerificationToken = req.query.emailVerificationToken;
 
   try {
@@ -271,7 +272,7 @@ const loginUserHandler = async (req, res) => {
     })
   }
   
-  const user = await User.findOne({ where: { email } })
+  const user = await User.findOne({ where: { email } });
   if (!user) {
     return res.status(401).json({
       message: 'Invalid email or password',
@@ -304,11 +305,124 @@ const loginUserHandler = async (req, res) => {
   });
 };
 
+// @desc POST User Password Reset Request
+// @route POST /v1/users/password-reset-request
+// @access Public 
+const passwordResetRequestHandler = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        message: 'Email is required!'
+      })
+    }
+
+    const user = await User.findOne({
+      where: {
+        email,
+      }
+    });
+
+    if (!user) {
+      return res.status(400).json({
+        message: 'User not found'
+      })
+    }
+
+    const passwordResetToken = jwt.sign({ userId: user.id }, config.jwtSecret, { expiresIn: '15m'});
+
+    user.passwordResetToken = passwordResetToken;
+    user.passwordResetTokenExpires = new Date(Date.now() + 900000);
+    await user.save();
+
+    await sendpasswordResetEmail(user.email, passwordResetToken);
+
+    res.status(200).json({
+      message: "Password reset email sent",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
+// @desc POST Password Reset for User
+// @route POST /v1/users/password-reset
+// @access Public 
+const passwordResetHandler = async (req, res) => {
+  
+  try {
+    const passwordResetToken = req.query.passwordResetToken
+    const { newPassword } = req.body;
+
+    if (!newPassword) {
+      res.status(400).json({
+        message: 'A new password is required',
+      });
+    }
+
+    const payload = jwt.verify(passwordResetToken, process.env.JWT_SECRET_KEY);
+    const userId = payload.userId;
+
+    const user = await User.findOne({
+      where: {
+        id: userId,
+        passwordResetToken
+      }
+    })
+
+    if (!user) {
+      return res.status(404).json({
+        message: 'User not found',
+      });
+    }
+
+    if (new Date() > user.passwordResetTokenExpires) {
+      return res.status(400).json({
+        message: 'Password reset token has expired'
+      })
+    }
+
+    if (!validatePassword(newPassword)) {
+      return res.status(400).json({
+        message: 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.',
+      });
+    }
+
+    const compareWithOldPassword = await bcrypt.compare(newPassword, user.password);
+
+    if(compareWithOldPassword) {
+      return res.status(400).json({
+        message: 'New password cannot be the same as old password',
+      })
+    }
+
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    user.password = hashedPassword;
+    user.passwordResetToken = null;
+    user.passwordResetTokenExpires = null;
+    await user.save();
+
+    res.status(200).json({
+      message: "✅ Password Successfully Reset!",
+    });
+  } catch(error) {
+    return res.status(500).json({
+      message: error.message,
+    });
+  }
+}
+
 
 
 module.exports = {
   createTenantHandler,
   createLandlordHandler,
-  verifyEmail,
+  verifyEmailHandler,
   loginUserHandler,
+  passwordResetRequestHandler,
+  passwordResetHandler
 }
