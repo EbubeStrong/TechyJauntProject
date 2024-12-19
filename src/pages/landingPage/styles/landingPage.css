@@ -90,7 +90,7 @@ img {
 /* start of Hero Section */
 .hero {
   width: 100%;
-  background-image: url("./images/hero-image.png");
+  background-image: url("../../../../public/images/hero-image.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
