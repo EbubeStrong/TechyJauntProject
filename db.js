@@ -2,17 +2,17 @@ const { Sequelize } = require('sequelize');
 const config = require('./config/config');
 
 
-const sequelize = new Sequelize(config.development.database, config.development.username, config.development.password, {
-  host: config.development.host,
-  port: config.development.port,
+const sequelize = new Sequelize(process.env.DB_URL, {
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
   dialect: 'postgres',
-  // logging: false,
-  // dialectOptions: {
-  //   ssl: {
-  //     require: true,
-  //     rejectUnauthorized: false,
-  //   }
-  // }
+  logging: false,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    }
+  }
 });
 
 (async () => {
