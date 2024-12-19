@@ -104,6 +104,12 @@ h3 {
 .label-input input,
 .label-input select {
   padding: 10px;
+   height: 27px;
+  border-radius: 6px;
+  border: 1px solid rgba(97, 97, 97, 0.52);
+  background-color: rgba(234, 241, 240, 1);
+  padding: 10px;
+  cursor: pointer;
 }
 
 .sign-up-btn {
@@ -164,4 +170,12 @@ h3 {
 .sign-in-prompt a {
   color: rgba(5, 155, 30, 1);
   text-decoration: none;
+}
+
+
+@media(max-width: 650px){
+  .label-container {
+  display: flex;
+  flex-direction: column;
+}
 }
