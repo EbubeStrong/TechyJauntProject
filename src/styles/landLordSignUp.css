@@ -1,0 +1,167 @@
+html{
+    background-color: #fff;
+    padding: 0;
+    width: 100%;
+}
+.sign-up {
+  /* padding: 2rem; */
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 100, 0, 0.6);
+}
+
+.landlord-sign-up {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  /* border: 2px solid red; */
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.2px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-txt h3 {
+  /* width: 304px; */
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.2px;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.welcome-txt p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* height: 50%; */
+}
+
+.label-input {
+  position: relative;
+}
+
+.eyecon-hide {
+  position: absolute;
+  /* top: 43%; */
+  /* right: 4%; */
+  top: 20px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.eyecon-see {
+  display: none;
+  position: absolute;
+  top: 30%;
+  right: 4%;
+  cursor: pointer;
+}
+
+.biz,
+.name,
+.number,
+.email,
+.password {
+  height: 27px;
+  border-radius: 6px;
+  border: 1px solid rgba(97, 97, 97, 0.52);
+  background-color: rgba(234, 241, 240, 1);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.label-container {
+  display: flex;
+  gap: 20px;
+  /* border: 2px solid red; */
+  width: 100%;
+}
+
+.label-input {
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+
+.label-input input,
+.label-input select {
+  padding: 10px;
+}
+
+.sign-up-btn {
+  height: 32px;
+  border: 1px solid rgba(97, 97, 97, 0.52);
+  background-color: rgba(22, 90, 74, 1);
+  padding: 10px 0;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  margin: 0.8rem 2.5rem 1.1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.sign-up-btn:active {
+  background-color: rgba(22, 90, 76, 1);
+}
+
+.other-options {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.other-options div {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+  border: 1px solid rgba(97, 97, 97, 0.52);
+  border-radius: 0.3rem;
+  padding: 0.2rem 0;
+  background-color: rgba(234, 241, 240, 1);
+  font-weight: 600;
+}
+
+.other-options a {
+  text-decoration: none;
+  color: black;
+}
+
+.sign-in-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.sign-in-prompt a {
+  color: rgba(5, 155, 30, 1);
+  text-decoration: none;
+}

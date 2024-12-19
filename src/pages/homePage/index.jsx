@@ -44,21 +44,21 @@ const Home = () => {
       image: Image3,
       title: "Self-contain",
     },
-    {
-      id: 4,
-      image: Image2,
-      title: "Flat",
-    },
-    {
-      id: 5,
-      image: Image1,
-      title: "Duplex",
-    },
-    {
-      id: 6,
-      image: Image3,
-      title: "Self-contain",
-    },
+    // {
+    //   id: 4,
+    //   image: Image2,
+    //   title: "Flat",
+    // },
+    // {
+    //   id: 5,
+    //   image: Image1,
+    //   title: "Duplex",
+    // },
+    // {
+    //   id: 6,
+    //   image: Image3,
+    //   title: "Self-contain",
+    // },
   ];
 
  
@@ -76,7 +76,7 @@ const Home = () => {
 
       <section className="categories__container">
         <div className="categories">
-          <Swiper
+          {/* <Swiper
             className="swiper__container"
             modules={[Pagination, Autoplay]}
             spaceBetween={40}
@@ -92,16 +92,16 @@ const Home = () => {
                 slidesPerView: 3,
               },
             }}
-          >
+          > */}
             {categories.map((category) => (
-              <SwiperSlide className="testimonial" key={category.id}>
+              <div className="testimonial" key={category.id}>
                 <div className="category">
                   <img src={category.image} alt={category.title} />
                   <h3 className="title">{category.title}</h3>
                 </div>
-              </SwiperSlide>
+              </div>
             ))}
-          </Swiper>
+          {/* </Swiper> */}
         </div>
       </section>
 

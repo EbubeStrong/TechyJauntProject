@@ -1,18 +1,19 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/homePage";
-import AboutHome from "./pages/aboutHome";
+import LandingPage from "./pages/landingPage";
+import Home from "./pages/homePage"
+import AboutHome from "./components/aboutHome";
 
 export default function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          {/* <Route path="/about?id" element={<AboutHome/>}/> */}
-          <Route path="/about/:id" element={<AboutHome />} />
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signup" element={<LandingPage />} />
+        <Route path="/login" element={<LandingPage />} />
+        <Route path="/about" element={<Home />} />
+        <Route path="/about/:id" element={<AboutHome />} />
+      </Routes>
+    </Router>
   );
 }

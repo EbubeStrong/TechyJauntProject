@@ -79,6 +79,8 @@
   .categories {
     width: 100%;
     padding: 2rem 0;
+    display: flex;
+    justify-content: space-around;
   }
 
   .category {
@@ -168,18 +170,18 @@
   }
 
   .title {
-    font-size: 0.8rem; /* Slightly smaller font for tighter spaces */
+    font-size: 0.8rem; 
   }
 
-  .swiper-pagination {
+  /* .swiper-pagination {
     position: relative;
-    top: 20px; /* Reduce spacing for tighter screens */
+    top: 20px; 
   }
 
   .swiper-pagination-bullet {
-    width: 7px; /* Smaller bullets */
+    width: 7px; 
     height: 7px;
-  }
+  } */
 
   .featured .listing {
     display: flex;
@@ -331,6 +333,7 @@
     width: 100%;
     padding: 20px;
     background-color: #fff;
+    border-top: 2px solid #000;
   }
 
   .footer-section{
@@ -341,12 +344,13 @@
   .footer-section .icons{
     display: flex;
     align-items: center;
+    gap: 10px;
     justify-content: space-between;
   }
 
   .footer-section .icons svg{
     font-size: 20px;
-    color: #fff;
+    color: #000;
     cursor: pointer;
   }
 }
