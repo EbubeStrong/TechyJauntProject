@@ -51,7 +51,7 @@ const sendGmail = async (email, emailVerificationToken) => {
         a:hover {
           background-color: #0056b3;
         }
-      </style>
+      </style>\
     </head>
     <body>
       <div class="email-body">
