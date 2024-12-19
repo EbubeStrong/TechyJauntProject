@@ -123,7 +123,7 @@ const AboutHome = () => {
           alt={property?.title}
           className="home__image"
         />
-        <div className="content">
+        <div className="homeContent">
           <h1>{property?.title}</h1>
           <p>{property?.location}</p>
 

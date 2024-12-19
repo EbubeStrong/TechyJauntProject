@@ -44,7 +44,7 @@ h1{
   margin-bottom: 15px;
 }
 
-.content{
+.homeContent{
     padding-left: 10px;
 }
 
@@ -88,7 +88,7 @@ h1{
   color: blue;
 }
 
-.content p{
+.homeContent p{
   font-size: 20px;
 }
  }

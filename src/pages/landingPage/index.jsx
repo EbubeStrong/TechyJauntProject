@@ -150,7 +150,7 @@ const LandingPage = () => {
         </section>
       </div>
 
-      <footer>
+      <div className="footer">
         <div className="footer-container">
           <p>Follow us on:</p>
           <div className="icons">
@@ -176,7 +176,7 @@ const LandingPage = () => {
             <p>&copy; 2024 Dwella. All rights reserved</p>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 };

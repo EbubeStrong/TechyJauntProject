@@ -57,7 +57,7 @@
 .sel-text p {
   margin-bottom: 7rem;
   color: #ffffff;
-
+  text-align: center;
   font-weight: 400;
   font-size: 17px;
   line-height: 19px;
@@ -82,4 +82,11 @@
   padding: 1rem 4rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media(max-width: 700px){
+  .button-group{
+  display: flex;
+  flex-direction: column;
+}
 }
