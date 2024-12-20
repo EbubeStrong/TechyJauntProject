@@ -60,7 +60,7 @@ const LandingPage = () => {
         {(isSignUp || isLogin) && (
           <>
             <div className="content-blur" />
-            <div className="modal-content">
+            <div className="modal-content ">
               <button className="close-button" onClick={handleClosePopups}>
                 X
               </button>

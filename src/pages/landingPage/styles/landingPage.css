@@ -145,20 +145,17 @@ img {
 .content {
   transition: filter 0.3s ease;
 }
-
-/* Blur effect for the landing page */
 .content-blur {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(160, 158, 158, 0.7); /* Optional overlay */
-  backdrop-filter: blur(3px); /* Blur effect */
-  z-index: 999; /* Layer below modal-content */
+  background: rgba(160, 158, 158, 0.7); 
+  backdrop-filter: blur(3px); 
+  z-index: 999; 
 }
 
-/* Modal content */
 .modal-content{
   position: fixed;
   top: 3%;
@@ -168,10 +165,9 @@ img {
   padding: 30px 20px;
   background: rgba(223, 222, 222, 0.904);
   box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Layer above content-blur */
+  z-index: 1000; 
 }
 
-/* Close button */
 .close-button {
   position: absolute;
   top: 5px;
@@ -553,10 +549,14 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 85%;
-  max-height: 90%; /* Optional: Prevent the modal from exceeding the viewport */
+  max-height: 90%; 
   overflow-y: auto;
 }
 ::-webkit-scrollbar{
   display: none;
+}
+.modal-content.no-scroll {
+  overflow: visible; /* Disable scrolling when this class is applied */
+  max-height: none; /* Ensure no height restriction */
 }
 }
