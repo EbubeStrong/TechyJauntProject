@@ -1,8 +1,9 @@
+/* eslint-disable */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook for redirection
 import "../styles/landLordSignUp.css";
 import LoginForm from "./loginForm";
-import PasswordInput from "./passwordInput";
+import PasswordInput from "./PasswordInput";
 
 const LandLord = () => {
   const navigate = useNavigate(); // Initialize navigate for redirection

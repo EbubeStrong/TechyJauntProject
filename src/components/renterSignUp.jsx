@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "../styles/landLordSignUp.css";
 import LoginForm from "./loginForm";
-import PasswordInput from "./passwordInput";
+import PasswordInput from "./PasswordInput";
 
 const RenterSignUp = () => {
   const navigate = useNavigate();
@@ -48,6 +49,7 @@ const RenterSignUp = () => {
   const handleSignUp = (e) => {
     e.preventDefault();
     if (validateForm()) {
+       toast.success("Signed up successfully!");
       // Navigate to the HomePage
       navigate("/home");
     }

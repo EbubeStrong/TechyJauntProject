@@ -488,7 +488,8 @@ const HomePage = () => {
   return (
     <div className={homeStyles.body}>
       <header className={homeStyles.homeHeader}>
-        <div className={homeStyles.logo}>
+              <div className={homeStyles.logo}>
+                  <img src="./logo.png" alt="" />
           <h2>Dwella</h2>
         </div>
 

@@ -3,16 +3,22 @@ import React, { useState } from "react";
 const PasswordInput = ({ value, onChange }) => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const handlePasswordChange = (e) => {
+    // Call the parent component's onChange with the event
+    onChange(e);
+  };
+
   return (
     <div className="label-input">
       <label htmlFor="password">Password</label>
       <div className="password-wrapper">
         <input
-          type={showPassword ? "text" : "password"}
+           type={showPassword ? "text" : "password"}
           className="password"
           name="password"
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={handlePasswordChange} 
+          
         />
         <svg
           className={showPassword ? "eyecon-hide" : "eyecon-see"}

@@ -50,6 +50,7 @@
 
       .label-input {
         position: relative;
+        width: 100%;
       }
 
       .eyecon-hide {
@@ -78,6 +79,7 @@
         background-color: rgba(234, 241, 240, 1);
         padding: 10px;
         cursor: pointer;
+        width: 100%;
       }
 
       .label-container-2 {
