@@ -488,8 +488,8 @@ const HomePage = () => {
   return (
     <div className={homeStyles.body}>
       <header className={homeStyles.homeHeader}>
-              <div className={homeStyles.logo}>
-                  <img src="./logo.png" alt="" />
+        <div className={homeStyles.logo}>
+          <img src="./logo.png" alt="" />
           <h2>Dwella</h2>
         </div>
 
@@ -505,16 +505,23 @@ const HomePage = () => {
               <a href="#">Messages</a>
             </li>
             <li>
-              <a href="#" className={homeStyles.signOut} onClick={handleSignOut}>
+              <a
+                href="#"
+                className={homeStyles.signOut}
+                onClick={handleSignOut}
+              >
                 Sign Out
               </a>
             </li>
           </ul>
-              </nav>
-             <a href="#" className={`${homeStyles.signOut} ${homeStyles.sign}`} onClick={handleSignOut}>
-  Sign Out
-</a>
-
+        </nav>
+        <a
+          href="#"
+          className={`${homeStyles.signOut} ${homeStyles.sign}`}
+          onClick={handleSignOut}
+        >
+          Sign Out
+        </a>
       </header>
 
       <main>
@@ -676,9 +683,7 @@ const HomePage = () => {
               )}
 
               {visibleCount >= listings.length && (
-                <button onClick={showLess}>
-                  Show Less
-                </button>
+                <button onClick={showLess}>Show Less</button>
               )}
             </div>
           </div>
