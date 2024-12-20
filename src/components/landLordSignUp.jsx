@@ -1,6 +1,8 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook for redirection
+import { toast } from "react-toastify";
+
 import "../styles/landLordSignUp.css";
 import LoginForm from "./loginForm";
 import PasswordInput from "./PasswordInput";
@@ -51,6 +53,7 @@ const LandLord = () => {
       if (!formData[field]) {
         newErrors[field] = `${field} is required`;
       }
+      
     }
 
     // Set the errors if any
@@ -58,6 +61,8 @@ const LandLord = () => {
       setErrors(newErrors);
     } else {
       // Navigate to HomePage after successful form submission
+             toast.success("Signed up successfully!");
+      
       navigate("/home");
     }
   };

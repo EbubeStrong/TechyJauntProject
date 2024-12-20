@@ -505,12 +505,16 @@ const HomePage = () => {
               <a href="#">Messages</a>
             </li>
             <li>
-              <a href="#" onClick={handleSignOut}>
+              <a href="#" className={homeStyles.signOut} onClick={handleSignOut}>
                 Sign Out
               </a>
             </li>
           </ul>
-        </nav>
+              </nav>
+             <a href="#" className={`${homeStyles.signOut} ${homeStyles.sign}`} onClick={handleSignOut}>
+  Sign Out
+</a>
+
       </header>
 
       <main>
