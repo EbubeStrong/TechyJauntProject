@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"; // Import toast for notifications
-import PasswordInput from "./PasswordInput"; // Import the PasswordInput component
+// import PasswordInput from "./PasswordInput"; 
+import PasswordInput from "./PasswordInput";
+// Import the PasswordInput component
 import "../styles/login.css";
 
 const LoginForm = () => {
@@ -64,9 +66,13 @@ const LoginForm = () => {
             </div>
 
             {/* PasswordInput component for handling the password */}
-            <PasswordInput
+            {/* <PasswordInput
               value={formData.password}
               onChange={handleInputChange}
+            /> */}
+            <PasswordInput
+              value={formData.password}
+              onChange={(password) => setFormData({ ...formData, password })}
             />
           </div>
 
