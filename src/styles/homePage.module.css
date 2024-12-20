@@ -78,7 +78,7 @@ main {
   align-items: center;
 }
 
-.search-prompt {
+.searchPrompt {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -129,7 +129,7 @@ main {
   border-radius: 3px;
 }
 
-.filterBy .more-filter {
+.filterBy .moreFilter {
   border: 1px solid lightslategray;
   padding: 1px 4px;
   border-radius: 6px;
@@ -205,6 +205,19 @@ main {
   border-top-left-radius: 1rem;
 }
 
+.load{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.load button{
+    padding: 1rem 2rem;
+    background: rgba(234, 241, 240, 1);
+    color: #000;
+    border: 2px solid lightblue;
+    cursor: pointer;
+}
+
 .houseDescription {
   display: flex;
   flex-direction: column;
@@ -229,6 +242,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: flex-start;
 }
 
 .testimonials {
