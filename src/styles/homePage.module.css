@@ -19,9 +19,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5rem;
+  padding: 1rem 5rem 10px 5rem;
   position: fixed;
-  top: -5px;
+  top: 0;
   z-index: 10;
   border-bottom: 1px solid lightgray;
   background-color: #fff;
@@ -80,7 +80,7 @@ main {
 
   width: 100%;
   height: 70%;
-
+  overflow: hidden;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -158,22 +158,61 @@ main {
   text-align: center;
 }
 
-.category {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.3rem;
-  place-items: center;
+/* .category {
+  display: flex;
+  gap: 2rem;
   width: 100%;
   padding: 1rem;
   background-color: rgba(234, 241, 240, 1);
   border-radius: 0.7rem;
 }
 
-.category img {
+.categoryPic img {
+  width: 200px;
+  height: 200px;
+  border-radius: 0.7rem;
+} */
+
+/* Container for marquee */
+.marquee {
+  overflow: hidden; /* Hide overflow */
+  position: relative;
+  width: 100%; 
+  /* Full width of the container */
+  /* border: 2px solid red; */
+}
+
+/* Scrolling content */
+.category {
+  display: flex;
+  gap: 2rem; /* Space between images */
+  animation: scroll-marquee 15s linear infinite; /* Smooth infinite scroll */
+  width: max-content; /* Dynamically calculate width based on content */
+}
+
+.categoryPic {
+  flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+.categoryPic img {
   width: 200px;
   height: 200px;
   border-radius: 0.7rem;
 }
+
+/* Keyframes for smooth, infinite scrolling */
+@keyframes scroll-marquee {
+  from {
+    transform: translateX(0); /* Start at normal position */
+  }
+  to {
+    transform: translateX(-20%); /* Scroll half the width to the left */
+  }
+}
+
+
+
+
 .category p {
   text-align: center;
 }

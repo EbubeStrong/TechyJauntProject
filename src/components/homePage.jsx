@@ -6,6 +6,35 @@ const categories = [
   { img: "./images/moreimg.jpg", name: "Duplex" },
   { img: "./images/kars.jpg", name: "Flat" },
   { img: "./images/rec.png", name: "Self-Con" },
+  { img: "./images/kars.jpg", name: "Flat" },
+  {
+    img: "https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Self-Con",
+  },
+  {
+    img: "https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Flat",
+  },
+  {
+    img: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Duplex",
+  },
+  {
+    img: "https://images.pexels.com/photos/53610/large-home-residential-house-architecture-53610.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Self-Con",
+  },
+  {
+    img: "https://images.pexels.com/photos/772177/pexels-photo-772177.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Duplex",
+  },
+  {
+    img: "https://images.pexels.com/photos/129494/pexels-photo-129494.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Flat",
+  },
+  {
+    img: "https://images.pexels.com/photos/1212053/pexels-photo-1212053.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Self-Con",
+  },
 ];
 
 const listings = [
@@ -140,8 +169,7 @@ const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [visibleCount, setVisibleCount] = useState(3);
   const [showLoadMore, setShowLoadMore] = useState(false);
-   const [loading, setLoading] = useState(false);
-
+  const [loading, setLoading] = useState(false);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -181,15 +209,15 @@ const HomePage = () => {
   //   setVisibleCount(3); // Reset to initial count
   // };
 
-   const handleLazyLoadRedirect = () => {
-     setLoading(true); // Start showing spinner
+  const handleLazyLoadRedirect = () => {
+    setLoading(true); // Start showing spinner
 
-     // Simulate a loading delay (e.g., 2 seconds) before navigating
-     setTimeout(() => {
-       setLoading(false); // Stop spinner
-       navigate("/homeList"); // Navigate to the /homeList page
-     }, 2000); // Simulate 2-second loading delay
-   };
+    // Simulate a loading delay (e.g., 2 seconds) before navigating
+    setTimeout(() => {
+      setLoading(false); // Stop spinner
+      navigate("/homeList"); // Navigate to the /homeList page
+    }, 2000); // Simulate 2-second loading delay
+  };
 
   return (
     <div className={homeStyles.body}>
@@ -348,6 +376,30 @@ const HomePage = () => {
                 <option value="">Property size</option>
                 <option value="">Facilities</option>
               </select>
+            </div>
+          </div>
+        </div>
+
+        <div className={homeStyles.secOne}>
+          <h3>Categories</h3>
+          <div className={homeStyles.marquee}>
+            <div className={homeStyles.category}>
+              {categories.map((category, index) => (
+                <div key={index} className={homeStyles.categoryPic}>
+                  <img src={category.img} alt={category.name} />
+                  <p>{category.name}</p>
+                </div>
+              ))}
+              {/* Duplicate the content for seamless scrolling */}
+              {categories.map((category, index) => (
+                <div
+                  key={`duplicate-${index}`}
+                  className={homeStyles.categoryPic}
+                >
+                  <img src={category.img} alt={category.name} />
+                  <p>{category.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
