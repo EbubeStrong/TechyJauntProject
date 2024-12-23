@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "./search";
 import "../../styles/global.css";
-import "./index.css";
+import "./home.css";
 import Image1 from "../../assets/duplex.png";
 import Image2 from "../../assets/flat.png";
 import Image3 from "../../assets/self-con.png";
@@ -67,15 +67,15 @@ const Home = () => {
           <section>
       <Header />
     </section>
-    <div className="home">
+    <div className="Home">
       <h1>
         Where Comfort Meets <br />
         Convenience
       </h1>
       <Search />
 
-      <section className="categories__container">
-        <div className="categories">
+      <section className="Categories__container">
+        <div className="Categories">
           {/* <Swiper
             className="swiper__container"
             modules={[Pagination, Autoplay]}
@@ -94,10 +94,10 @@ const Home = () => {
             }}
           > */}
             {categories.map((category) => (
-              <div className="testimonial" key={category.id}>
-                <div className="category">
+              <div className="Testimonial" key={category.id}>
+                <div className="Category">
                   <img src={category.image} alt={category.title} />
-                  <h3 className="title">{category.title}</h3>
+                  <h3 className="Title">{category.title}</h3>
                 </div>
               </div>
             ))}

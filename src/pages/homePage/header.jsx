@@ -1,8 +1,8 @@
 import logo from "../../assets/logo_1.png";
 const Header = () => {
     return (
-      <header>
-        <div className="logo">
+      <header className="Header">
+        <div className="Logo">
           <img src={logo} alt="" />
           <span>Dwella</span>
         </div>

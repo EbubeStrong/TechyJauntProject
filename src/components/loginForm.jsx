@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"; // Import toast for notifications
-// import PasswordInput from "./PasswordInput"; 
-import PasswordInput from "./PasswordInput";
-// Import the PasswordInput component
+import axios from "axios"; // Import axios
+import PasswordInput from "./PasswordInput"; // Import the PasswordInput component
 import "../styles/login.css";
 
 const LoginForm = () => {
@@ -25,23 +24,41 @@ const LoginForm = () => {
   };
 
   // Handle login form submission
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Assuming validateForm() is a function for form validation
-    if (validateForm()) {
-      // Show success toast before navigating
-      toast.success("Logged in successfully!"); // Show the toast
+    if (!validateForm()) {
+      toast.error("Please fill in all fields correctly.");
+      return;
+    }
 
-      // Navigate to HomePage on successful login
+    try {
+      const response = await axios.post(
+        "https://dwella.onrender.com/v1/users/register/login",
+        formData
+      );
+
+      // Extract token or user data from the response
+      const { token, message } = response.data;
+
+      // Save the token to localStorage
+      localStorage.setItem("token", token);
+
+      // Show success toast and navigate
+      toast.success(message || "Logged in successfully!");
       navigate("/home");
+    } catch (error) {
+      // Extract error message from the response
+      const errorMessage =
+        error.response?.data?.message || "Login failed. Please try again.";
+      console.error("Error during login:", errorMessage);
+      toast.error(errorMessage);
     }
   };
 
   // Validate form inputs
   const validateForm = () => {
-    // Add your validation logic here (e.g., check if email and password are valid)
-    return formData.email && formData.password; // Example validation
+    return formData.email && formData.password;
   };
 
   return (
@@ -65,11 +82,6 @@ const LoginForm = () => {
               />
             </div>
 
-            {/* PasswordInput component for handling the password */}
-            {/* <PasswordInput
-              value={formData.password}
-              onChange={handleInputChange}
-            /> */}
             <PasswordInput
               value={formData.password}
               onChange={(password) => setFormData({ ...formData, password })}

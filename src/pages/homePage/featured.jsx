@@ -102,31 +102,31 @@ const Featured = () => {
     }
   };
   return (
-    <section className="featured">
-      <div className="listing">
+    <section className="Featured">
+      <div className="Listing">
         <h2>Recommended Listings</h2>
         <button>See all</button>
       </div>
-      <div className="properties">
+      <div className="Properties">
         {featuredProperties.map((property, id) => {
           // Calculate transform to position the current and next wrappers
           const translateX = `${-100 * currentIndex}%`;
 
           return (
             <div
-              className="wrapper"
+              className="Wrapper"
               key={id}
               style={{ transform: `translateX(${translateX})` }}
             >
               <img src={property.image} alt={property.title} />
-              <div className="house-images">
+              <div className="House-images">
                 <h3 className="title">{property.title}</h3>
-                <p className="title location">{property.location}</p>
+                <p className="Title location">{property.location}</p>
 
                 <p>{property.price}</p>
                 <p>{property.beds}</p>
 
-                <div className="house-text">
+                <div className="House-text">
                   <p>{property.description}</p>
                   <p>{property.date}</p>
                 </div>

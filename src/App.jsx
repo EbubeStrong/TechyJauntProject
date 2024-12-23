@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landingPage";
-import Home from "./pages/homePage/index.jsx";
-import AboutHome from "./components/aboutHome";
 import HomePage from "./components/homePage";
+import HousePage from "./components/housePage";
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
-// import LoginForm from "./components/LoginForm"; // Make sure LoginForm is imported
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -35,10 +33,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/signup" element={<LandingPage />} />
-            <Route path="/login" element={<LandingPage />} /> {/* LoginForm route */}
-            <Route path="/about" element={<Home />} />
-            <Route path="/about/:id" element={<AboutHome />} />
+            <Route path="/login" element={<LandingPage />} />
             <Route path="/home" element={<HomePage />} />
+            <Route path="/homeList" element={<HousePage />} />
           </Routes>
         </>
       )}

@@ -21,7 +21,7 @@
   justify-content: space-between;
   padding: 0 5rem;
   position: fixed;
-  top: 0;
+  top: -5px;
   z-index: 10;
   border-bottom: 1px solid lightgray;
   background-color: #fff;
@@ -93,7 +93,8 @@ main {
   gap: 1rem;
   margin-top: 4rem;
   margin-bottom: 0.5rem;
-  padding: 3rem 0 2rem 0;
+  padding: 3rem 1rem 2rem 1rem;
+  width: 100%;
 }
 
 .inputFluent {
@@ -107,7 +108,8 @@ main {
 .searchBar {
   border-radius: 7px;
   padding: 0.7rem 0.3rem;
-  width: 25rem;
+  /* width: 25rem; */
+  width: 100%;
   border: 1px solid rgba(52, 69, 98, 0.5);
 }
 
@@ -130,6 +132,7 @@ main {
 .filterBy {
   display: flex;
   flex-wrap: wrap;
+  flex: 1;
   align-items: center;
   justify-content: center;
   gap: 25px;
@@ -187,10 +190,36 @@ main {
   padding-inline: 6px;
 }
 
-.moreListings a {
+.moreListings button {
   color: rgba(22, 90, 74, 1);
   text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
+
+.spin-container {
+  position: fixed; /* Fix the spinner in place */
+  top: 50%;         /* Center the spinner vertically */
+  left: 50%;        /* Center the spinner horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  z-index: 9999;   /* Center vertically */
+}
+
+.spin {
+ border: 4px solid rgba(255, 255, 255, 0.3); /* Light grey circle */
+  border-top: 4px solid #3498db; /* Blue color for top */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 .moreImages {
   display: grid;
@@ -265,7 +294,7 @@ main {
   padding: 2rem;
   border-radius: 10px;
   margin-bottom: 2rem;
-  background-color: #d9d9d9;
+  /* background-color: #d9d9d9; */
   margin-inline: 12rem;
 }
 
@@ -278,7 +307,8 @@ main {
 .custReview {
   /* width: 100%; */
   display: flex;
-  flex-direction: row;
+  gap: 2rem;
+  /* flex-direction: row; */
   justify-content: space-between;
 }
 
@@ -287,9 +317,12 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding: 2rem;
+
   /* width: 10rem; */
   text-align: center;
-  padding-inline: 2rem;
+  background-color: #d9d9d9;
+
 }
 
 .footer {
@@ -356,14 +389,14 @@ main {
   /* border: 2px solid red; */
 }
 
-  .moreImages img {
-    /* width: 220px; */
-  }
+  /* .moreImages img {
+    width: 220px;
+  } */
 
   .pitch {
     margin: 0 3rem 3.5rem 3rem;
   }
-  .testimonials {
+  /* .testimonials {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -374,104 +407,48 @@ main {
     background-color: #d9d9d9;
     margin-inline: 6rem;
     font-size: 10px;
-  }
-
-  .customer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-    padding-inline: 1rem;
-  }
-}
-
-@media (max-width: 425px) {
-  /* * {
-    font-size: 10px;
-  }
   } */
-  .body {
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
 
-  nav {
-    display: none;
-  }
-
-  .filterBy {
-    gap: 5px;
-  }
-
-  .category img {
-    width: 100px;
-    height: 100px;
-    border-radius: 0.7rem;
-  }
-
-  .moreImages {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin-bottom: 2.5rem;
-  }
-
-  .more1 {
-    background-color: rgba(234, 241, 240, 1);
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: row;
-    gap: 2px;
-    padding-bottom: 0.5rem;
-    width: 100%;
-  }
-
-  .moreImages img {
-    width: 160px;
-    height: 160px;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 0;
-  }
-
-  .testimonials {
-    /* width: 50rem; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    background-color: #d9d9d9;
-    margin-inline: 1rem;
-    font-size: 7px;
+  .testimonials{
+    width: 70%;
   }
 
   .customer {
-    display: flex;
+    width: 100%;
+  }
+  .custReview {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+}
+
+
+a, button{
+  text-decoration: none;
+  color: rgba(106, 180, 110, 0.815);
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.footer a{
+  color: #fff;
+}
+
+@media(max-width: 600px){
+  .homeHeader {
+    padding: 0 1rem;
+  }
+  .testimonials{
+    width: 80%;
+  }
+
+  .footer, .more{
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-    padding-inline: 1rem;
-  }
-
-  .customer img {
-    height: 50px;
-    width: 50px;
-  }
-
-  .customer div {
-    display: flex;
-  }
-
-  .footer {
-    font-size: 10px;
+    align-items: flex-start;
+    gap: 2rem;
   }
 }

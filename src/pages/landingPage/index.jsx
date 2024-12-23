@@ -139,6 +139,34 @@ const LandingPage = () => {
           </div>
         </section>
 
+        <section className="container">
+          <div className="hero-text-two">
+            <div className="image">
+              <img src="./images/explore-image-2.png" alt="" />
+            </div>
+
+            <div className="text">
+              <h3>
+                “Dwella Is Your Key to A <br /> Hassle-Free Renting”
+              </h3>
+
+              <h3 className="text-2">
+                “Dwella Is Your Key to A Free Renting”
+              </h3>
+
+              <p>
+                Dwella is a modern rental listing platform designed to connect
+                tenants and landlords seamlessly. Whether you're searching for
+                your dream apartment or listing a property, Dwella simplifies
+                the process with AI-powered recommendations and real-time
+                updates. Enjoy a stress-free way to find or rent properties
+                tailored to your needs. Discover rentals. Simplify life. Welcome
+                to Dwella.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="get-started container">
           <h4>Ready to Find Your Dream Home?</h4>
           <p>
@@ -155,13 +183,13 @@ const LandingPage = () => {
           <p>Follow us on:</p>
           <div className="icons">
             <div className="icon">
-              <FaFacebookF size={20} />
+              <FaFacebookF size={20} className="i" />
             </div>
             <div className="icon">
-              <FaInstagram size={20} />
+              <FaInstagram size={20} className="i" />
             </div>
             <div className="icon">
-              <FaTwitter size={20} />
+              <FaTwitter size={20} className="i" />
             </div>
           </div>
           <div className="nav-links">

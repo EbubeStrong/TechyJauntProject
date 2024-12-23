@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import homeStyles from "../styles/homePage.module.css";
 
 const categories = [
@@ -111,6 +111,303 @@ const listings = [
       </svg>
     ),
   },
+  {
+    img: "./images/moreimg.jpg",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "./images/more1.png",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "./images/rec.png",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "https://images.pexels.com/photos/8134745/pexels-photo-8134745.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "https://images.pexels.com/photos/8134847/pexels-photo-8134847.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "https://images.pexels.com/photos/7061672/pexels-photo-7061672.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "https://images.pexels.com/photos/5997993/pexels-photo-5997993.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    img: "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=600",
+    title: "Room and parlor self contain",
+    price: "500,000 per annum",
+    details: "1 Bedroom, 1 Bathroom",
+    furnished: "Furnished",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M19.739 6.15368C19.739 3.40281 17.8583 2.30005 15.1506 2.30005H8.79167C6.16711 2.30005 4.2002 3.32762 4.2002 5.97022V20.694C4.2002 21.4198 4.98115 21.877 5.61373 21.5221L11.9957 17.9422L18.3225 21.5161C18.9561 21.873 19.739 21.4158 19.739 20.689V6.15368Z"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M8.27148 9.02811H15.5898"
+          stroke="#130F26"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
 
   // Add more listing objects as needed
 ];
@@ -136,12 +433,10 @@ const testimonials = [
   },
 ];
 
-const HomePage = () => {
+const HousePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [visibleCount, setVisibleCount] = useState(3);
   const [showLoadMore, setShowLoadMore] = useState(false);
-   const [loading, setLoading] = useState(false);
-
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -158,6 +453,14 @@ const HomePage = () => {
   //   setVisibleCount((prevCount) => prevCount + 3); // Show 3 more items
   // };
 
+  const loadMore = () => {
+    if (!showLoadMore) {
+      // Clicking "See All" shows 6 items and the Load More button
+      setVisibleCount(6);
+      setShowLoadMore(true);
+    }
+  };
+
   //   const handleLoadMore = () => {
   //     // Incrementally load 3 more items
   //     if (visibleCount + 3 >= listings.length) {
@@ -173,26 +476,17 @@ const HomePage = () => {
   //     setShowLoadMore(false); // Hide "Load More" and show "See All"
   //   };
 
-  // const handleLoadMore = () => {
-  //   setVisibleCount((prev) => prev + 3); // Load 3 more listings
-  // };
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 3); // Load 3 more listings
+  };
 
-  // const showLess = () => {
-  //   setVisibleCount(3); // Reset to initial count
-  // };
-
-   const handleLazyLoadRedirect = () => {
-     setLoading(true); // Start showing spinner
-
-     // Simulate a loading delay (e.g., 2 seconds) before navigating
-     setTimeout(() => {
-       setLoading(false); // Stop spinner
-       navigate("/homeList"); // Navigate to the /homeList page
-     }, 2000); // Simulate 2-second loading delay
-   };
+  const showLess = () => {
+    setVisibleCount(3); // Reset to initial count
+  };
 
   return (
     <div className={homeStyles.body}>
+      {/* <div className={homeStyles.houseContent}> */}
       <header className={homeStyles.homeHeader}>
         <div className={homeStyles.logo}>
           <img src="./logo.png" alt="" />
@@ -294,10 +588,9 @@ const HomePage = () => {
                 <option value="">Location</option>
                 <option value="Abuja">Abuja</option>
                 <option value="Lagos">Lagos</option>
-                {/* Add more options as needed */}
               </select>
             </div>
-            {/* Repeat similar structure for other filters */}
+
             <div className="bedroomContainer">
               <select name="bedroom" className="bedroom">
                 <option value="">Bedroom</option>
@@ -355,17 +648,10 @@ const HomePage = () => {
         <div className={homeStyles.recList}>
           <div className={homeStyles.moreListings}>
             <h3>Recommended listings</h3>
-            {loading ? (
-              <div className="spin-container">
-                <div className="spin"></div>
-              </div>
-            ) : (
-              <button
-                onClick={handleLazyLoadRedirect}
-                className={homeStyles.seeAll}
-              >
-                See All
-              </button>
+            {!showLoadMore && (
+              <a href="#" onClick={loadMore}>
+               Click again to See all
+              </a>
             )}
           </div>
 
@@ -389,51 +675,16 @@ const HomePage = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-        {/* </div> */}
 
-        <div className={homeStyles.pitch}>
-          <div>
-            <h3>Discover Affordable Apartments for Rent on Dwella</h3>
-            <p>
-              Find your dream home with our wide selection of affordable
-              apartments for rent on Dwella. Whether you’re looking for cozy
-              studio apartments, spacious family homes, or modern luxury flats,
-              we offer options to suit every budget and lifestyle. Our platform
-              features verified listings from trusted landlords, ensuring a safe
-              and seamless rental experience. Browse apartments with amenities
-              like swimming pools, gyms, and parking spaces, all at competitive
-              prices. Start your search today and discover the perfect place to
-              call home.
-            </p>
-          </div>
+            <div className={homeStyles.load}>
+              {showLoadMore && visibleCount < listings.length && (
+                <button onClick={handleLoadMore}>Load More</button>
+              )}
 
-          <div>
-            <h3>Explore Apartments in Prime Locations</h3>
-            <p>
-              Looking for an apartment in a convenient location? [Your Website
-              Name] has you covered. From bustling city centers to quiet
-              suburban neighborhoods, we offer apartments in prime areas that
-              cater to your lifestyle. Whether you need a home close to work,
-              schools, or vibrant social spots, our platform lets you search by
-              location, price, and amenities. Explore detailed property
-              information and neighborhood guides to make informed decisions.
-              Begin your journey to the perfect location today.
-            </p>
-          </div>
-
-          <div>
-            <h3>Find Apartments with Advanced Features and Amenities</h3>
-            <p>
-              At Dwella, we understand the importance of finding a home with the
-              right features. Our listings include apartments with advanced
-              amenities like smart home technology, spacious balconies, modern
-              kitchens, and energy-efficient designs. Use our filters to refine
-              your search by price, number of bedrooms, and facilities like
-              gyms, pools, or pet-friendly options. Start exploring now and
-              discover apartments that enhance your lifestyle.
-            </p>
+              {visibleCount >= listings.length && (
+                <button onClick={showLess}>Show Less</button>
+              )}
+            </div>
           </div>
         </div>
 
@@ -459,7 +710,6 @@ const HomePage = () => {
       <div className={homeStyles.footer}>
         <div className={homeStyles.socialsSpace}>
           <p>Follow us on:</p>
-          {/* Social icons */}
         </div>
         <div className={homeStyles.more}>
           <a href="#">About</a>
@@ -475,4 +725,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HousePage;
