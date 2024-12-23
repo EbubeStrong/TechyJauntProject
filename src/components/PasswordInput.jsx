@@ -5,7 +5,7 @@ const PasswordInput = ({ value, onChange }) => {
 
   const handlePasswordChange = (e) => {
     // Call the parent component's onChange with the event
-    onChange(e);
+    onChange(e.target.value);
   };
 
   return (
