@@ -146,19 +146,19 @@ const listings = [
 
 const testimonials = [
   {
-    img: "./images/kars.jpg",
-    name: "Rose Dexter",
+    img: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Peter Charis",
     review:
       "The team was incredibly helpful and responsive. They made the entire process smooth and stress-free. Highly recommended!",
   },
   {
-    img: "./images/kars.jpg",
-    name: "Charis Darling",
+    img: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600",
+    name: "Rose Dexter",
     review:
       "I couldn’t have asked for better support! Every question I had was answered promptly, and they went above and beyond to assist me.",
   },
   {
-    img: "./images/kars.jpg",
+    img: "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=600",
     name: "David Noris",
     review:
       "Exceptional service! They truly care about their customers and ensure every detail is taken care of. Thank you for making it so easy!",
